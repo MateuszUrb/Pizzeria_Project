@@ -1,0 +1,15 @@
+@import "var-colors";
+
+body {
+    background-color: $main;
+}
+
+$color: red;
+
+@mixin logo {
+    user-select: none;
+}
+.logo {
+    @include logo;
+    color: $color;
+}
