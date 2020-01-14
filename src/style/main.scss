@@ -1,15 +1,42 @@
 @import "var-colors";
+@import "navbar";
 
-body {
-    background-color: $main;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-$color: red;
+header {
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-@mixin logo {
-    user-select: none;
-}
-.logo {
-    @include logo;
-    color: $color;
+    .main__logo {
+        cursor: pointer;
+        text-transform: uppercase;
+        color: white;
+        font-size: 3rem;
+        padding: .3em;
+    }
+    .navbar_list {
+        display: flex;
+        list-style: none;
+        font-size: 1.4rem;
+        .list_item {
+            padding: 1.3rem;
+            &:hover {
+                background-color: rgba($color: #b1b1b1, $alpha: .2);
+                transition: 0.5s;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+        }
+    }
+
 }
