@@ -1,5 +1,11 @@
 import "../style/main.scss";
 
-const test = () => console.log("sup");
-
-test();
+const toggleNavBar = () => {
+  const links = document.querySelector(".navbar_list");
+  if (links.style.display === "block") {
+    links.style.display = "none";
+  } else {
+    links.style.display = "block";
+  }
+};
+ toggleNavBar();

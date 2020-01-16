@@ -1,0 +1,17 @@
+@import "main";
+@import "var-colors";
+
+$breakpoint-dekstop: 900px;
+$breakpoint-tablet: 979px;
+$breakpoint-mobile: 500px;
+
+@media screen and (max-width: 1000px) {
+    .navbar_list {
+        display: none;
+    }
+    .burger {
+        div {
+            display: block;
+        }
+    }
+}
