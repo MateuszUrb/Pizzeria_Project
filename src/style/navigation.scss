@@ -1,7 +1,8 @@
 header {
-    background-color: rgba($color: Black, $alpha: 0.8);
     width: 100%;
     position: fixed;
+    z-index: 9999;
+    background: rgba($color: #363946, $alpha: .95);
 
     nav {
         display: flex;
@@ -21,14 +22,10 @@ header {
         display: flex;
         list-style: none;
         font-size: 1.4em;
+        text-align: center;
 
         .list_item {
-            padding: 1.3rem;
-
-            &:hover {
-                background-color: rgba($color: darkred, $alpha: 0.3);
-                transition: .6s;
-            }
+            padding: 1.9rem;
 
             a {
                 text-decoration: none;
@@ -48,6 +45,7 @@ header {
 .hamburger {
     justify-content: center;
     flex-direction: column;
+
     div {
         width: 1.6rem;
         height: 2px;
@@ -57,14 +55,18 @@ header {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1045px) {
     .main__logo {
         padding: 10px 0 10px 0;
+        margin-right: 10px;
     }
 
-.hamburger {
-    display: block;
-}
+    .hamburger {
+        display: block;
+        padding: .3rem;
+        background-color: rgba($color: #20232c, $alpha: .3);
+        border-radius: 5px;
+    }
 
     .navbar_list_items {
         right: 0;
@@ -75,17 +77,18 @@ header {
         align-items: center;
         position: absolute;
         top: 4rem;
-        background-color: #1b1b1b;
+        background-color: #363946;
         width: 100%;
         transform: translate(100%);
         transition: transform .5s ease-in;
-        }
-        a {
-            padding: 14px 16px;
-            display: block;
-            font-size: 1em;
-        }
     }
+
+    a {
+        padding: 14px 16px;
+        display: block;
+        font-size: 1em;
+    }
+}
 
 .nav-active {
     transform: translateX(0%);
@@ -94,9 +97,17 @@ header {
 .toggle .link1 {
     transform: rotate(-45deg) translate(-5px, 4px);
 }
+
 .toggle .link2 {
     opacity: 0;
 }
+
 .toggle .link3 {
     transform: rotate(45deg) translate(-5px, -4px);
+}
+
+.toggle {
+    &:hover {
+        background-color: darkred;
+    }
 }
