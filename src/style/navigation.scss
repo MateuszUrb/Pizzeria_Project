@@ -2,7 +2,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 9999;
-    background: rgba($color: #363946, $alpha: .95);
+    background: rgba($color: #363946, $alpha: .85);
 
     nav {
         display: flex;
@@ -25,7 +25,7 @@ header {
         text-align: center;
 
         .list_item {
-            padding: 1.9rem;
+            padding: 1rem 2rem 1rem 2rem;
 
             a {
                 text-decoration: none;
@@ -36,7 +36,6 @@ header {
 
     }
 }
-
 .dsp {
     display: none;
     cursor: pointer;
@@ -51,7 +50,7 @@ header {
         height: 2px;
         background-color: white;
         margin: 4px;
-        transition: all .4s ease;
+        transition: all .4s easy-in;
     }
 }
 
@@ -90,6 +89,11 @@ header {
     }
 }
 
+.navHeaderOpacity {
+    background-color: #363946;
+    transition: ease .5s;
+}
+
 .nav-active {
     transform: translateX(0%);
 }
@@ -108,6 +112,6 @@ header {
 
 .toggle {
     &:hover {
-        background-color: darkred;
+        background-color: #323644;
     }
 }

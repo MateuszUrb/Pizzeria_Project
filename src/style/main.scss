@@ -6,13 +6,13 @@
 
 @media screen and (max-width: 650px) {
     .welcome-section {
-        height: 35vh;
         background-position: top;
     }
+
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 $breakpoint-dekstop: 900px;
@@ -24,39 +24,77 @@ $breakpoint-mobile: 500px;
     margin: 0 auto;
 }
 
-.welcome-section {
-    position: relative;
-}
 
-.welcome_backgroundImg {
-    background-image: url("../assets/Welcome_background.jpg");
+.welcome_backgroundImg,
+.Hero_backgroundImg {
+    background: url("../assets/fire.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: hidden;
-    height: 48vh;
+    height: 65vh;
     width: 100vw;
     left: 0;
     right: 0;
-    display: flex;
-    z-index: -1;
+    display: grid;
+    align-items: center;
 }
 
 .about_us {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 5em;
     text-transform: uppercase;
-    letter-spacing: .9rem;
-    margin-top: 5rem;
     display: flex;
     justify-content: center;
-    color: #8C979A;
+    color: rgb(205, 212, 214);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr;
     text-align: center;
+    height: auto;
+    grid-row-gap: 2em;
+    padding: 10px;
+    margin-bottom: -4.5em;
+}
+
+.section-a {
+    font-size: 2em;
+}
+
+.section-a-content {
+    font-size: .9em;
+}
+
+.section_about {
+    background-color: lightgray;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+.section_about_content {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2em;
 }
 
 @media screen and (max-width: 1045px) {
-    .about_us { 
-        font-size: 2.2em;
-        margin-top: 9rem;
+    .about_us {
+        bottom: 1rem;
     }
+}
+
+.main_restaurant {
+    margin-top: 5rem;
+}
+
+.restaurant_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill minmax(250px, 1fr));
+    grid-template-rows: 1fr;
+    margin-top: 1.3rem;
+}
+
+.restaurant_wrapper>div {
+    background-color: #ddd;
 }
