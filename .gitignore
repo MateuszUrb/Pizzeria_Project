@@ -1,9 +1,5 @@
-node_modules
-dist
+node_modules/
+dist/
 .vscode
 .prettierrc
-<<<<<<< HEAD
 ~.
-=======
-~.
->>>>>>> fe3d21c4506e8d85930eb98c3cf1224c370a0a02
