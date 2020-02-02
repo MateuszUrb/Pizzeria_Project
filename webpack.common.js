@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 module.exports = {
@@ -18,12 +17,12 @@ module.exports = {
         use: ["html-loader"],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jp(e*)g|gif)$/,
         use: {
-          loader: "file-loader",
+          loader: "url-loader",
           options: {
+            limit: 8000,
             name: "[name].[hash].[ext]",
-            outputPath: "imgs",
             esModule: false
           },
         },
