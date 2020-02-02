@@ -2,7 +2,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 9999;
-    background: rgba($color: #363946, $alpha: .85);
+    background: rgba($color: $main-nav-color, $alpha: .85);
 
     nav {
         display: flex;
@@ -36,6 +36,7 @@ header {
 
     }
 }
+
 .dsp {
     display: none;
     cursor: pointer;
@@ -63,7 +64,7 @@ header {
     .hamburger {
         display: block;
         padding: .3rem;
-        background-color: rgba($color: #20232c, $alpha: .3);
+        background-color: darken(#363946, 8%);
         border-radius: 5px;
     }
 
@@ -76,7 +77,7 @@ header {
         align-items: center;
         position: absolute;
         top: 4rem;
-        background-color: #363946;
+        background-color: $main-nav-color;
         width: 100%;
         transform: translate(100%);
         transition: transform .5s ease-in;
@@ -90,8 +91,8 @@ header {
 }
 
 .navHeaderOpacity {
-    background-color: #363946;
-    transition: ease .5s;
+    background-color: $main-nav-color;
+    transition: ease-in .5s;
 }
 
 .nav-active {
@@ -100,14 +101,18 @@ header {
 
 .toggle .link1 {
     transform: rotate(-45deg) translate(-5px, 4px);
+    transition: all .3s;
 }
 
 .toggle .link2 {
     opacity: 0;
+    transition: all .3s;
+
 }
 
 .toggle .link3 {
     transform: rotate(45deg) translate(-5px, -4px);
+    transition: all .3s;
 }
 
 .toggle {
