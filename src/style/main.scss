@@ -1,4 +1,4 @@
-@import "var-colors";
+@import "variables";
 @import "navigation";
 @import "reset";
 @import "mediaQueries";
@@ -14,10 +14,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
 }
-
-$breakpoint-dekstop: 900px;
-$breakpoint-tablet: 979px;
-$breakpoint-mobile: 500px;
 
 .container {
     width: 70%;
@@ -65,7 +61,7 @@ $breakpoint-mobile: 500px;
 
 .section_about {
     background-color: lightgray;
-    width: 100%;
+    width: 100vw;
     height: 20vh;
     display: flex;
     align-items: center;
@@ -84,17 +80,56 @@ $breakpoint-mobile: 500px;
     }
 }
 
-.main_restaurant {
-    margin-top: 5rem;
+.restaurant__title {
+    margin-top: 5em;
 }
 
-.restaurant_wrapper {
+.restaurant__wrapper {
+    margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill minmax(250px, 1fr));
-    grid-template-rows: 1fr;
-    margin-top: 1.3rem;
+    grid-template-columns: 1fr 1fr;
 }
 
-.restaurant_wrapper>div {
-    background-color: #ddd;
+.restaurant__content {
+    background-color: #eee;
+    display: flex;
+    padding: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3rem;
+    grid-auto-rows: auto;
+}
+
+.restaurant__photos-grid {
+    display: grid;
+    height: 300px;
+    background-color: #eee;
+    grid-gap: 1em;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    box-shadow: $shadow;
+}
+
+.photo1 {
+    grid-row: 1/3;
+}
+
+.photo3 {
+    grid-column: 2/3;
+}
+
+@media screen and (max-width: 1045px) {
+    .restaurant__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .photo1 {
+        grid-column: 1 / 3;
+    }
 }
