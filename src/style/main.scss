@@ -92,44 +92,93 @@ body {
 
 .restaurant__content {
     background-color: #eee;
-    display: flex;
     padding: 2rem;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     line-height: 1.3rem;
     grid-auto-rows: auto;
+
+    p {
+        margin-top: 2rem;
+    }
 }
 
 .restaurant__photos-grid {
     display: grid;
-    height: 300px;
     background-color: #eee;
-    grid-gap: 1em;
+    grid-gap: .7em;
+    padding: 1rem;
 }
 
 .photo {
     display: flex;
     justify-content: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 2em;
     align-items: center;
     background-color: grey;
     box-shadow: $shadow;
+    background-image: url(https://www.psy.pl/wp-content/uploads/2006/08/shiba1-e1488886701256.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
 }
 
 .photo1 {
     grid-row: 1/3;
+    min-height: 250px;
+
+}
+
+.photo2 {
+    background-position: top;
+    background-size: cover;
 }
 
 .photo3 {
     grid-column: 2/3;
+    background-position: top;
+    background-size: cover;
 }
 
 @media screen and (max-width: 1045px) {
     .restaurant__wrapper {
+        width: 100vw;
         grid-template-columns: 1fr;
     }
 
     .photo1 {
         grid-column: 1 / 3;
+    }
+}
+
+.provide-wrapper {
+    margin-top: 7rem;
+    background-color: pink;
+}
+
+.provide__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-gap: 1em;
+    width: 90%;
+
+}
+
+.provide__item {
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    border: 1px solid black;
+
+}
+
+.card-wrapper {
+    padding: 2em;
+
+    h3 {
+        margin: 2rem 0;
+    }
+
+    i {
+        color: red
     }
 }
