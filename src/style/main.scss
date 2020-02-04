@@ -38,25 +38,13 @@ body {
 .about_us {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
     color: rgb(205, 212, 214);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: .5fr;
     text-align: center;
-    height: auto;
     grid-row-gap: 2em;
-    padding: 10px;
     margin-bottom: -4.5em;
-}
-
-.section-a {
-    font-size: 2em;
-}
-
-.section-a-content {
-    font-size: .9em;
+    max-width: 50vw;
+    max-height: 50vh;
 }
 
 .section_about {
@@ -84,8 +72,10 @@ body {
     margin-top: 5em;
 }
 
+
 .restaurant__wrapper {
     margin-top: 3rem;
+    min-height: 35rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -94,18 +84,16 @@ body {
     background-color: #eee;
     padding: 2rem;
     line-height: 1.3rem;
-    grid-auto-rows: auto;
-
-    p {
-        margin-top: 2rem;
-    }
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
 }
 
 .restaurant__photos-grid {
     display: grid;
     background-color: #eee;
     grid-gap: .7em;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .photo {
@@ -154,11 +142,12 @@ body {
 .provide-wrapper {
     margin-top: 7rem;
     background-color: pink;
+    width: 100vw;
 }
 
 .provide__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     grid-gap: 1em;
     width: 90%;
 
