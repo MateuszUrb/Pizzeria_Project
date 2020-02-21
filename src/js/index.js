@@ -1,4 +1,5 @@
 import "../style/main.scss";
+import heroImg from '../assets/fire.jpg';
 
 const showNav = () => {
   const hamburger = document.querySelector(".hamburger");
@@ -21,5 +22,4 @@ const showNav = () => {
 };
 
 showNav();
-// navbar background change after scroll
 
