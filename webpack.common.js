@@ -7,8 +7,7 @@ module.exports = {
     vendor: "./src/js/vendor.js",
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
       },
@@ -19,12 +18,7 @@ module.exports = {
       {
         test: /\.(svg|png|jp(e*)g|gif)$/,
         use: {
-          loader: "url-loader",
-          options: {
-            limit: 8000,
-            name: "[name].[hash].[ext]",
-            esModule: false
-          },
+          loader: "file-loader",
         },
       },
     ],
