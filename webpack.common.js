@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   entry: {
     main: "./src/js/index.js",
-    vendor: "./src/js/vendor.js",
+    // vendor: "./src/js/vendor.js",
   },
   module: {
     rules: [{
@@ -14,12 +14,6 @@ module.exports = {
       {
         test: /\.html$/,
         use: ["html-loader"],
-      },
-      {
-        test: /\.(svg|png|jp(e*)g|gif)$/,
-        use: {
-          loader: "file-loader",
-        },
       },
     ],
   },
