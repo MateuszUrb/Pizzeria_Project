@@ -2,7 +2,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 9999;
-    background: rgba($color: $main-nav-color, $alpha: .85);
+    background: $main-nav-color;
 
     nav {
         display: flex;
