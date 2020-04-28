@@ -8,7 +8,7 @@
     .welcome-section {
         background-position: top;
     }
-
+    
 }
 
 body {
@@ -31,23 +31,24 @@ body {
     width: 100vw;
     left: 0;
     right: 0;
-    display: grid;
     align-items: center;
+    display: flex;
 }
 
 .about_us {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-transform: uppercase;
     color: rgb(0, 0, 0);
-    display: grid;
     text-align: center;
-    grid-row-gap: 2em;
-    margin-left: 10em;
     max-width: 30vw;
     max-height: 50vh;
-    height: 20vw;
+    min-height: fit-content;
     background-color: rgba($color: #ffffff, $alpha: .9);
     padding: 2rem;
+}
+
+.welcome__title {
+    margin: 0 0 30px 0;
 }
 
 .section_about {
@@ -68,7 +69,23 @@ body {
 @media screen and (max-width: 1045px) {
     .about_us {
         bottom: 1rem;
+        max-width: 50vw;
+        overflow-y: auto;
+        margin-bottom: 1em;
+        align-self: flex-end;
     }
+    .image_welcome_side {
+        display: none;
+    }
+}
+
+.image_welcome_side {
+    background-color: wheat;
+    align-self: flex-end;
+    margin-right: 15vw;
+    width: 35vw;
+    height: 70vh;
+    transform: translate(0, 27%);
 }
 
 .restaurant__title {
