@@ -7,8 +7,8 @@
 @media screen and (max-width: 650px) {
     .welcome-section {
         background-position: top;
-    }
-    
+}
+
 }
 
 body {
@@ -21,8 +21,7 @@ body {
 }
 
 
-.welcome_backgroundImg,
-.Hero_backgroundImg {
+.welcome_backgroundImg {
     background: url("../assets/fire.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,6 +32,7 @@ body {
     right: 0;
     align-items: center;
     display: flex;
+
 }
 
 .about_us {
@@ -43,8 +43,30 @@ body {
     max-width: 30vw;
     max-height: 50vh;
     min-height: fit-content;
-    background-color: rgba($color: #ffffff, $alpha: .9);
+    background-color: rgba($color: #ffffff, $alpha: .7);
     padding: 2rem;
+
+    .welcome__button {
+        justify-self: flex-start;
+        display: flex;
+        margin: 2em 0 0 0;
+    }
+
+    .welcome__button-menu {
+        padding: .7em;
+        border-radius: 3px;
+        border: none;
+        background-color: green;
+        max-width: 100%;
+        min-width: 70%;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 1.2em;
+    }
+}
+
+welcome__arrowDown {
+    display: none;
 }
 
 .welcome__title {
@@ -66,16 +88,31 @@ body {
     font-size: 2em;
 }
 
+
 @media screen and (max-width: 1045px) {
     .about_us {
-        bottom: 1rem;
-        max-width: 50vw;
-        overflow-y: auto;
-        margin-bottom: 1em;
+        bottom: 3rem;
+        max-width: 85vw;
+        margin-bottom: 5em;
         align-self: flex-end;
     }
+
     .image_welcome_side {
         display: none;
+    }
+
+    .welcome__arrowDown {
+        color: white;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .welcome_backgroundImg {
+        height: 100vh;
     }
 }
 

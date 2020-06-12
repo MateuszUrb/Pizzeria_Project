@@ -12,6 +12,7 @@ const showNav = () => {
     for (let i = 0; i < listItem.length; i++) {
       listItem[i].style.width = "100%";
       listItem[0].style.borderTop = "1px solid black";
+
     }
 
     // hamburger animation

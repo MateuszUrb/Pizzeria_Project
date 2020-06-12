@@ -8,6 +8,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        }
     }
 
     .main__logo {
@@ -25,7 +26,7 @@ header {
         text-align: center;
 
         .list_item {
-            padding: 1rem 2rem 1rem 2rem;
+            padding: .8em 2em .7em 2em;
 
             a {
                 text-decoration: none;
@@ -35,7 +36,6 @@ header {
         }
 
     }
-}
 
 .dsp {
     display: none;
@@ -63,7 +63,7 @@ header {
 
     .hamburger {
         display: block;
-        padding: .3rem;
+        padding: .2rem;
         background-color: darken(#363946, 8%);
         border-radius: 5px;
     }
@@ -76,11 +76,11 @@ header {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 4rem;
+        top: 3rem;
         background-color: $main-nav-color;
         width: 100%;
         transform: translate(100%);
-        transition: transform .5s ease-in;
+        transition: transform .3s ease-in;
     }
 
     a {
@@ -113,10 +113,4 @@ header {
 .toggle .link3 {
     transform: rotate(45deg) translate(-5px, -4px);
     transition: all .3s;
-}
-
-.toggle {
-    &:hover {
-        background-color: #323644;
-    }
 }
