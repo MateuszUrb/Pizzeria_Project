@@ -2,17 +2,27 @@
 @import "navigation";
 @import "reset";
 @import "mediaQueries";
+@import "footer";
 
+@keyframes arrowBounce {
+    from {
+        opacity: 0;
+        transform: translateY(-10em);
+    }
 
-@media screen and (max-width: 650px) {
-    .welcome-section {
-        background-position: top;
-}
-
+    to {
+        opacity: 1;
+        transform: translateY(5px);
+    }
 }
 
 body {
     font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden; //fix x-scroll bug technically not bug tho
+}
+
+body {
+    background-color: $main-body-color;
 }
 
 .container {
@@ -22,18 +32,19 @@ body {
 
 
 .welcome_backgroundImg {
-    background: url("../assets/fire.jpg");
+    background: url("../assets/Medium_Img/WelcomeBackGroundMedium.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 80vh;
+    height: 90vh;
     width: 100vw;
     left: 0;
     right: 0;
     align-items: center;
     display: flex;
-
 }
+
+
 
 .about_us {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -43,30 +54,27 @@ body {
     max-width: 30vw;
     max-height: 50vh;
     min-height: fit-content;
-    background-color: rgba($color: #ffffff, $alpha: .7);
+    background-color: #ffffff;
     padding: 2rem;
+    border-radius: 5px;
 
     .welcome__button {
-        justify-self: flex-start;
-        display: flex;
         margin: 2em 0 0 0;
     }
 
     .welcome__button-menu {
         padding: .7em;
-        border-radius: 3px;
+        border-radius: 50px;
         border: none;
-        background-color: green;
+        background-color: $main-button;
+        color: #fff;
+        cursor: pointer;
+
         max-width: 100%;
         min-width: 70%;
-        text-transform: uppercase;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         font-size: 1.2em;
     }
-}
-
-welcome__arrowDown {
-    display: none;
 }
 
 .welcome__title {
@@ -88,17 +96,52 @@ welcome__arrowDown {
     font-size: 2em;
 }
 
+.welcome__arrowDown {
+    display: none;
+}
 
 @media screen and (max-width: 1045px) {
+    .restaurant__content {
+        margin-top: 3.2em;
+    }
+
+    .restaurant__content {
+        .restaurant__title {
+            margin: 0 auto;
+            padding: 1em 0 2em 0;
+        }
+    }
+
+    .welcome-section::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: 0;
+        border-style: solid;
+        border-width: 0 100px 100px 0;
+        border-color: transparent #000 transparent transparent;
+    }
+
     .about_us {
         bottom: 3rem;
         max-width: 85vw;
-        margin-bottom: 5em;
+        margin-bottom: 10em;
         align-self: flex-end;
+        background: linear-gradient(315deg, #ffffff, #e6e6e6);
+        box-shadow: $shadow
+            20px 20px 60px #ffffff;
+        border-radius: 50px;
     }
 
     .image_welcome_side {
         display: none;
+    }
+
+
+
+    .welcome_backgroundImg {
+        height: 100vh;
     }
 
     .welcome__arrowDown {
@@ -109,57 +152,64 @@ welcome__arrowDown {
         align-self: flex-end;
         position: absolute;
         bottom: 5px;
-    }
+        opacity: 0;
+        animation-name: arrowBounce;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
 
-    .welcome_backgroundImg {
-        height: 100vh;
+        i {
+            cursor: pointer;
+        }
     }
 }
 
 .image_welcome_side {
-    background-color: wheat;
+    background: url("../assets/Medium_Img/small1.jpg");
     align-self: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin-right: 15vw;
     width: 35vw;
     height: 70vh;
-    transform: translate(0, 27%);
-}
-
-.restaurant__title {
-    margin-top: 5em;
+    transform: translate(0, 20%);
+    border: 15px solid white;
+    border-bottom: none;
+    position: relative;
 }
 
 
 .restaurant__wrapper {
-    margin-top: 3rem;
+    margin-top: 10rem;
     min-height: 35rem;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 2em;
 }
 
 .restaurant__content {
-    background-color: #eee;
+    background-color: #ffffff;
     padding: 2rem;
     line-height: 1.3rem;
     display: flex;
     align-items: center;
     flex-flow: wrap;
+    box-shadow: $shadow
 }
 
 .restaurant__photos-grid {
     display: grid;
-    background-color: #eee;
+    background-color: #fff;
     grid-gap: .7em;
-    padding: 2rem;
 }
 
 .photo {
     display: flex;
     justify-content: center;
-    color: rgb(0, 0, 0);
-    text-transform: uppercase;
-    font-size: 2em;
-    align-items: center;
     background-color: grey;
     box-shadow: $shadow;
     background-image: url(https://www.psy.pl/wp-content/uploads/2006/08/shiba1-e1488886701256.jpg);
@@ -187,6 +237,7 @@ welcome__arrowDown {
 
 @media screen and (max-width: 1045px) {
     .restaurant__wrapper {
+        margin-top: 3.1em;
         width: 100vw;
         grid-template-columns: 1fr;
     }
@@ -198,8 +249,12 @@ welcome__arrowDown {
 
 .provide-wrapper {
     margin-top: 7rem;
-    background-color: pink;
     width: 100vw;
+    background-color: blue;
+
+    .background__shadow-top {
+        box-shadow: $shadow
+    }
 }
 
 .provide__items {
@@ -213,18 +268,29 @@ welcome__arrowDown {
 .provide__item {
     margin: 1rem 0 1rem 0;
     text-align: center;
-    border: 1px solid black;
-
+    background-color: #fff;
+    border-radius: 3px;
 }
 
-.card-wrapper {
+.card__wrapper {
     padding: 2em;
 
-    h3 {
-        margin: 2rem 0;
+    .card__title {
+        font-weight: inherit;
+        border: 0;
+        outline: 0;
+        margin: 0;
+        border-radius: 3px;
+        display: inline-block;
+        font-size: 0.88em;
+        line-height: 2em;
+        margin: 1em 0 1em 0;
+        padding: 0 0.8em;
+        background-color: $info;
+        color: #ffffff;
     }
 
     i {
-        color: red
+        color: $info
     }
 }
