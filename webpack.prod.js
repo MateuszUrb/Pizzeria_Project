@@ -77,10 +77,10 @@ module.exports = merge(common, {
             {
                 test: /\.(svg|png|jpe?g|gif)$/i,
                 use: {
-                  loader: "file-loader?limit=8192",
+                  loader: "file-loader",
                   options: {
-                    name: "[hash].[name].bundle.[ext]",
-                    publicPath: './',
+                    name: "[name].[ext]",
+                    publicPath: './dist',
                     outputPath: "images/"
                   }
                 },

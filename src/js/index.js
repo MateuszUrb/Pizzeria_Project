@@ -1,5 +1,6 @@
 import "../style/main.scss";
 
+
 const showNav = () => {
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".navbar_list_items");
