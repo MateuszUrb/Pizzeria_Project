@@ -1,8 +1,8 @@
 @import "variables";
 @import "navigation";
 @import "reset";
-@import "mediaQueries";
 @import "footer";
+@import "Font-face";
 
 @keyframes arrowBounce {
     from {
@@ -17,7 +17,6 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
     overflow-x: hidden; //fix x-scroll bug technically not bug tho
 }
 
@@ -29,7 +28,6 @@ body {
     width: 70%;
     margin: 0 auto;
 }
-
 
 .welcome_backgroundImg {
     background: url("../assets/Medium_Img/WelcomeBackGroundMedium.jpg");
@@ -44,11 +42,8 @@ body {
     display: flex;
 }
 
-
-
 .about_us {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-transform: uppercase;
+    font-family: crimsonRegular, Arial, Helvetica, sans-serif;
     color: rgb(0, 0, 0);
     text-align: center;
     max-width: 30vw;
@@ -69,7 +64,6 @@ body {
         background-color: $main-button;
         color: #fff;
         cursor: pointer;
-
         max-width: 100%;
         min-width: 70%;
         letter-spacing: 2px;
@@ -79,6 +73,8 @@ body {
 
 .welcome__title {
     margin: 0 0 30px 0;
+    font-size: 2.5rem;
+    font-family: crimsonRegular, Arial, Helvetica, sans-serif;
 }
 
 .section_about {
@@ -100,9 +96,141 @@ body {
     display: none;
 }
 
+
+.image_welcome_side {
+    background: url("../assets/Medium_Img/small1.jpg");
+    align-self: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15vw;
+    width: 35vw;
+    height: 70vh;
+    transform: translate(0, 20%);
+    border: 15px solid white;
+    border-bottom: none;
+    position: relative;
+}
+
+
+.restaurant__wrapper {
+    margin-top: 12.4rem;
+    min-height: 35rem;
+    width: 100%;
+    background-color: #fff;
+    padding: 2em;
+    flex-wrap: wrap;
+
+}
+
+
+.provide-wrapper {
+    margin-top: 7rem;
+    width: 100vw;
+    background-color: blue;
+
+    .background__shadow-top {
+        box-shadow: $shadow
+    }
+}
+
+.provide__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 2rem;
+    width: 90%;
+
+}
+
+.provide__item {
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.card__wrapper {
+    padding: 2em;
+
+    .card__title {
+        font-family: crimsonRegular, Arial, Helvetica, sans-serif;
+        border: 0;
+        outline: 0;
+        margin: 0;
+        border-radius: 3px;
+        display: inline-block;
+        font-size: 1em;
+        line-height: 2em;
+        margin: 1em 0 1em 0;
+        padding: 0 0.8em;
+        background-color: $info;
+        color: #ffffff;
+    }
+
+    i {
+        color: $info
+    }
+}
+
+.all__about--content {
+    display: flex;
+    height: 66rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about__content {
+    width: 65%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+
+    &--text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: fit-content;
+        height: 100%;
+        background-color: burlywood;
+        margin-right: 10px;
+        text-align: center;
+        justify-content: space-around;
+        padding: 30px;
+
+        &--image {
+            background-color: red;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.about__content:nth-child(2) {
+    flex-direction: row-reverse;
+    margin-left: 10rem;
+    margin-right: 0;
+
+    .about__content--text {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    .restaurant__wrapper {
+        margin-top: 6.2em;
+        padding: 2em;
+        width: 100vw;
+    }
+
+}
+
 @media screen and (max-width: 1045px) {
     .restaurant__content {
-        margin-top: 3.2em;
+        margin-top: .8rem;
+        height: fit-content;
+        width: fit-content;
     }
 
     .restaurant__content {
@@ -116,11 +244,10 @@ body {
         content: "";
         width: 0;
         height: 0;
-        position: absolute;
-        right: 0;
         border-style: solid;
-        border-width: 0 100px 100px 0;
-        border-color: transparent #000 transparent transparent;
+        position: absolute;
+        border-width: 100px 0 0 100px;
+        border-color: transparent transparent transparent #000000;
     }
 
     .about_us {
@@ -129,8 +256,7 @@ body {
         margin-bottom: 10em;
         align-self: flex-end;
         background: linear-gradient(315deg, #ffffff, #e6e6e6);
-        box-shadow: $shadow
-            20px 20px 60px #ffffff;
+        box-shadow: $shadow 20px 20px 60px #ffffff;
         border-radius: 50px;
     }
 
@@ -162,135 +288,13 @@ body {
             cursor: pointer;
         }
     }
-}
 
-.image_welcome_side {
-    background: url("../assets/Medium_Img/small1.jpg");
-    align-self: flex-end;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 15vw;
-    width: 35vw;
-    height: 70vh;
-    transform: translate(0, 20%);
-    border: 15px solid white;
-    border-bottom: none;
-    position: relative;
-}
+    .about__content {
+        width: 100%;
+        width: auto;
 
-
-.restaurant__wrapper {
-    margin-top: 10rem;
-    min-height: 35rem;
-    position: relative;
-    width: 100%;
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 2em;
-}
-
-.restaurant__content {
-    background-color: #ffffff;
-    padding: 2rem;
-    line-height: 1.3rem;
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
-    box-shadow: $shadow
-}
-
-.restaurant__photos-grid {
-    display: grid;
-    background-color: #fff;
-    grid-gap: .7em;
-}
-
-.photo {
-    display: flex;
-    justify-content: center;
-    background-color: grey;
-    box-shadow: $shadow;
-    background-image: url(https://www.psy.pl/wp-content/uploads/2006/08/shiba1-e1488886701256.jpg);
-    background-size: cover;
-    background-position: center;
-    min-height: 150px;
-}
-
-.photo1 {
-    grid-row: 1/3;
-    min-height: 250px;
-
-}
-
-.photo2 {
-    background-position: top;
-    background-size: cover;
-}
-
-.photo3 {
-    grid-column: 2/3;
-    background-position: top;
-    background-size: cover;
-}
-
-@media screen and (max-width: 1045px) {
-    .restaurant__wrapper {
-        margin-top: 3.1em;
-        width: 100vw;
-        grid-template-columns: 1fr;
-    }
-
-    .photo1 {
-        grid-column: 1 / 3;
-    }
-}
-
-.provide-wrapper {
-    margin-top: 7rem;
-    width: 100vw;
-    background-color: blue;
-
-    .background__shadow-top {
-        box-shadow: $shadow
-    }
-}
-
-.provide__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    grid-gap: 1em;
-    width: 90%;
-
-}
-
-.provide__item {
-    margin: 1rem 0 1rem 0;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 3px;
-}
-
-.card__wrapper {
-    padding: 2em;
-
-    .card__title {
-        font-weight: inherit;
-        border: 0;
-        outline: 0;
-        margin: 0;
-        border-radius: 3px;
-        display: inline-block;
-        font-size: 0.88em;
-        line-height: 2em;
-        margin: 1em 0 1em 0;
-        padding: 0 0.8em;
-        background-color: $info;
-        color: #ffffff;
-    }
-
-    i {
-        color: $info
+        &:nth-child(2) {
+            margin-left: 0;
+        }
     }
 }
