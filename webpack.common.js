@@ -15,6 +15,12 @@ module.exports = {
         test: /\.html$/,
         use: ["html-loader"],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+           'file-loader',
+        ],
+      },
     ],
   },
 };
