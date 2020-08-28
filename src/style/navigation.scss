@@ -1,41 +1,54 @@
 header {
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 9998;
     background: $main-nav-color;
 
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        }
     }
+}
 
-    .main__logo {
+.main__logo {
+    a {
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.navbar_list_items {
+    display: flex;
+    list-style: none;
+    font-size: 1.3em;
+    text-align: center;
+    overflow: hidden;
+
+    .list_item {
+        padding: .8em 2em .7em 2em;
+        transition:
+            background-position .2s ease-in-out,
+            color .2s ease-in-out;
+
+        &:hover {
+            background-image: linear-gradient(to top, $main-button, transparent);
+        }
+
         a {
-            text-transform: uppercase;
-            color: white;
             text-decoration: none;
+            color: white;
+
         }
     }
 
-    .navbar_list_items {
-        display: flex;
-        list-style: none;
-        font-size: 1.3em;
-        text-align: center;
+}
 
-        .list_item {
-            padding: .8em 2em .7em 2em;
 
-            a {
-                text-decoration: none;
-                color: white;
-
-            }
-        }
-
-    }
+.list_item--active {
+    background-image: linear-gradient(to top, $main-button, transparent);
+}
 
 .dsp {
     display: none;
@@ -56,6 +69,7 @@ header {
 }
 
 @media screen and (max-width: 1045px) {
+
     .main__logo {
         padding: 10px 0 10px 0;
         margin-right: 10px;
@@ -69,9 +83,10 @@ header {
 
     .navbar_list_items {
         right: 0;
-        height: 100vh;
+        height: 90vh;
         overflow: hidden;
         display: flex;
+        justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -83,9 +98,8 @@ header {
     }
 
     .brand_logo-link {
-        padding: 14px 16px;
+        padding: 1px 0px;
         display: block;
-        font-size: 1em;
     }
 }
 
