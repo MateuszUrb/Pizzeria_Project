@@ -42,3 +42,11 @@ let year = dateObj.getFullYear();
 let output = `Available: ${month} \n ${day}, ${year}`;
 
 document.querySelectorAll('.events__date').forEach(el => el.textContent = output);
+
+
+// animation lib
+AOS.init({
+  duration: 1300,
+  offset: 250,
+
+});
