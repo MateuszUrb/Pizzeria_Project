@@ -4,11 +4,11 @@ const common = require("./webpack.common");
 const merge = require("webpack-merge");
 const autoPrefixer = require("autoprefixer");
 const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const {
     CleanWebpackPlugin
 } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
     mode: "production",
@@ -80,8 +80,8 @@ module.exports = merge(common, {
                   loader: "file-loader",
                   options: {
                     name: "[name].[ext]",
-                    publicPath: './dist',
-                    outputPath: "images/"
+                    esModule: false,
+                    outputPath: 'images/'
                   }
                 },
               },

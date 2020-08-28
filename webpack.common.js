@@ -1,4 +1,5 @@
 const path = require("path");
+const loader = require("sass-loader");
 
 
 module.exports = {
@@ -17,9 +18,12 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-           'file-loader',
-        ],
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'fonts/'
+          }
+        },
       },
     ],
   },
