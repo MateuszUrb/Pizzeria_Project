@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Making and delivering Pizza to your House">
+    <meta http-equiv="Cache-control" content="public">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/175ad7f7dc.js" crossorigin="anonymous"></script>
     <title>PizzeriaMia</title>
 </head>
 
-<body>
+<body style="background-image: url(/src/assets/Img/bg/mainBg.svg);">
     <header>
         <div class="container">
             <nav>
@@ -33,7 +34,8 @@
         </div>
     </header>
     <section class="welcome-section" id="restaurant">
-        <div class="welcome_backgroundImg">
+        <div class="mainImgs__holder">
+            <img class="welcome_backgroundImg" src="/src/assets/Img/Medium_Img/ConvWelcomeM.jpg" alt="pizza image on background">
             <div class="about_us container" data-aos="slide-right">
                 <h2 class="welcome__title">Welcome to PizzaMia</h2>
                 <p class="welcome__content">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -45,7 +47,7 @@
             <div class="welcome__arrowDown">
                 <i id="bouncingArrowDown" class="fas fa-angle-down fa-3x"></i>
             </div>
-            <div class="image_welcome_side"></div>
+            <img class="image_welcome_side" src="/src/assets/Img/Medium_Img/small1.jpg" alt="hands holding cake">
         </div>
         </div>
     </section>
@@ -275,13 +277,6 @@
 
     </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1300,
-            offset: 250,
-
-        });
-    </script>
 </body>
 
 </html>

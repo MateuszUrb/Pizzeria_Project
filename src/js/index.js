@@ -31,7 +31,7 @@ function hideNav() {
 
 hideNav();
 
-// get date for events 
+// get date for events
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
@@ -44,7 +44,7 @@ let output = `Available: ${month} \n ${day}, ${year}`;
 document.querySelectorAll('.events__date').forEach(el => el.textContent = output);
 
 
-// animation lib
+// animation lib, global setting's
 AOS.init({
   duration: 1300,
   offset: 250,
