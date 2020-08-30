@@ -33,7 +33,7 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "./css/[name].[ext]",
+            filename: "./css/[name].css",
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
