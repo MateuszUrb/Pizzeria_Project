@@ -1,4 +1,4 @@
-##Pizzeria--Mia
+## `Pizzeria--Mia`
 
 simple Website *Landing Page* about fake pizzeriaMia
 (created while learning the webpack)
