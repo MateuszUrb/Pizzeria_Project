@@ -11,7 +11,6 @@ const autoPrefixer = require("autoprefixer");
 
 module.exports = merge(common, {
     mode: "production",
-    devtool: 'source-map',
     output: {
         filename: "./js/[name].bundle.js",
         path: path.resolve(__dirname, "dist")

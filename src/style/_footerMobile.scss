@@ -1,5 +1,4 @@
 @import "variables";
-@import "Font-face";
 
 footer {
     width: 100%;
@@ -7,7 +6,7 @@ footer {
     background-color: $main-nav-color;
     margin-top: 5em;
     display: flex;
-    font-family: crimsonRegular, Helvetica, sans-serif;
+    font-family: 'Crimson Text', Helvetica, sans-serif;
 }
 
 .fab {
