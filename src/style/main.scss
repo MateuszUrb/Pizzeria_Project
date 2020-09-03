@@ -12,625 +12,645 @@ body {
     overflow-x: hidden; //fix x-scroll bug technically not bug tho
     background-color: $main-body-color;
     background-size: 30rem;
+    background: url();
 }
 
-.container {
-    width: 70%;
-    margin: 0 auto;
+// loader spinner
+#loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
 }
 
-.welcome-section {
-    position: relative;
-    display: flex;
-}
-
-.mainImgs__holder {
-    display: flex;
-    height: 90vh;
-    width: 100vw;
-}
-
-.welcome_backgroundImg {
-    object-fit: cover;
-    width: 100%;
-
-}
-
-.about_us {
-    font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    max-width: 30vw;
-    max-height: 53vh;
-    height: 16rem;
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 5px;
-    z-index: 100;
-    color: $header;
+.center {
     position: absolute;
-    align-self: center;
-    left: 13%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
 
-    .welcome__button {
-        margin: 2em 0 0 0;
+    .container {
+        width: 70%;
+        margin: 0 auto;
     }
 
-    .welcome__button-menu {
-        padding: .7em;
-        border-radius: 50px;
-        border: none;
-        background-color: $main-button;
-        color: #fff;
-        cursor: pointer;
-        max-width: 100%;
-        min-width: 70%;
-        letter-spacing: 2px;
-        font-size: 1.2em;
-        transition: all .5s;
+    .welcome-section {
+        position: relative;
+        display: flex;
+    }
 
-        &:hover {
-            color: #000;
-            background-color: #fff;
-            border: 2px solid $main-button;
-            box-shadow:
-                1px 1px $main-nav-color,
-                2px 2px $main-nav-color,
-                3px 3px$main-nav-color;
-            transform: translateX(-3px);
+    .mainImgs__holder {
+        display: flex;
+        height: 90vh;
+        width: 100vw;
+    }
+
+    .welcome_backgroundImg {
+        object-fit: cover;
+        width: 100%;
+
+    }
+
+    .about_us {
+        font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        max-width: 30vw;
+        max-height: 53vh;
+        height: 16rem;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 5px;
+        z-index: 100;
+        color: $header;
+        position: absolute;
+        align-self: center;
+        left: 13%;
+
+        .welcome__button {
+            margin: 2em 0 0 0;
+        }
+
+        .welcome__button-menu {
+            padding: .7em;
+            border-radius: 50px;
+            border: none;
+            background-color: $main-button;
+            color: #fff;
+            cursor: pointer;
+            max-width: 100%;
+            min-width: 70%;
+            letter-spacing: 2px;
+            font-size: 1.2em;
+            transition: all .5s;
+
+            &:hover {
+                color: #000;
+                background-color: #fff;
+                border: 2px solid $main-button;
+                box-shadow:
+                    1px 1px $main-nav-color,
+                    2px 2px $main-nav-color,
+                    3px 3px$main-nav-color;
+                transform: translateX(-3px);
+            }
         }
     }
-}
 
-.welcome__content {
-    font-size: 1.3rem;
-}
-
-.welcome__title {
-    margin: 0 0 30px 0;
-    font-size: 2.5rem;
-    font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: $header;
-}
-
-.section_about {
-    background-color: lightgray;
-    width: 100vw;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-}
-
-.section_about_content {
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-    font-size: 2em;
-}
-
-.welcome__arrowDown {
-    display: none;
-}
-
-
-.image_welcome_side {
-    align-self: flex-end;
-    width: 35vw;
-    height: 70vh;
-    transform: translate(0, 20%);
-    border: 15px solid #f6f6f6;
-    border-bottom: none;
-    position: absolute;
-    right: 13%;
-    object-fit: cover;
-}
-
-.restaurant__wrapper {
-    margin-top: 12.4rem;
-    height: fit-content;
-    width: 100%;
-    background-color: #fff;
-    padding: 2em;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
-
-
-.provide-wrapper {
-    margin-top: 7rem;
-    width: 100vw;
-    background-color: #fff;
-
-    .background__shadow-top {
-        box-shadow: $shadow
+    .welcome__content {
+        font-size: 1.3rem;
     }
-}
 
-.provide__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    grid-gap: 2rem;
-    width: 90%;
-
-}
-
-.provide__item {
-    margin: 1rem 0 1rem 0;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 15px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow: 17px 17px 34px #dbdbdb,
-        -17px -17px 34px #ffffff;
-}
-
-.card__wrapper {
-    padding: 2em;
-
-    .card__title {
+    .welcome__title {
+        margin: 0 0 30px 0;
+        font-size: 2.5rem;
         font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
-        border: 0;
-        outline: 0;
-        margin: 0;
-        border-radius: 3px;
-        display: inline-block;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        margin: 1em 0 1em 0;
-        padding: 0 0.8em;
-        background-color: $info;
-        color: #ffffff;
+        font-weight: 600;
+        color: $header;
     }
 
-    i {
-        color: $info
-    }
-}
-
-.card__context {
-    font-size: 1.2rem;
-    color: $darkHeader;
-}
-
-.main__header {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    font-size: 4rem;
-    text-align: center;
-    color: $header;
-    font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-    text-shadow: 12px -5px 7px #00000059;
-}
-
-.about__events {
-    padding: 0;
-    margin-top: 3rem;
-}
-
-.all__about--content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.about__content:last-child {
-    align-items: flex-start;
-
-    .about__content--text {
-        margin-top: 30px;
-    }
-}
-
-.about__content {
-    display: flex;
-    justify-content: center;
-    margin-top: 6rem;
-    align-items: flex-end;
-    height: fit-content;
-    width: 80%;
-
-    &--text {
+    .section_about {
+        background-color: lightgray;
+        width: 100vw;
+        height: 20vh;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        width: fit-content;
-        height: fit-content;
-        background-color: rgba(209, 209, 209, 0.5);
+    }
+
+    .section_about_content {
         text-align: center;
-        justify-content: space-around;
-        padding: 30px;
-        margin-bottom: 25px;
-        transform: translate(150px) !important;
-        backdrop-filter: blur(3px);
-        border-radius: 5px;
-        z-index: 1;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2em;
     }
 
-    &--image {
-        z-index: 0;
-        filter: drop-shadow(0 0 0.75rem $main-nav-color);
-
+    .welcome__arrowDown {
+        display: none;
     }
-}
 
-.about__content:first-child::before {
-    content: "";
-    background: url(https://www.pngitem.com/pimgs/m/49-494441_clip-art-black-and-white-pizza-clip-art.png);
-    width: 30rem;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 30rem;
-    display: block;
-    transform: translate(-35rem, 0rem);
-    position: absolute;
-    opacity: .6;
-}
 
-.about__content:last-child::before {
-    content: "";
-    background: url(http://cdn4.dibujos.net/dibujos/pintar/racion-de-pizza_2.png);
-    width: 30rem;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 30rem;
-    display: block;
-    transform: translate(-35rem, 20rem);
-    position: absolute;
-    opacity: .6;
-}
-
-.about__content:nth-child(2) {
-    flex-direction: row-reverse;
-
-    .about__content--text {
-        margin-left: 10px;
-        transform: translate(-150px) !important;
-        margin-top: 25px;
-        height: fit-content;
-    }
-}
-
-.about {
-    font-size: 1.3rem;
-    line-height: 23px;
-    color: $darkHeader;
-}
-
-.about__header {
-    margin: 0 0 20px 0;
-    position: relative;
-    font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-    font-size: 2.5rem;
-    color: $darkHeader;
-
-    &::after {
-        content: '';
-        width: 30px;
-        height: 1.5px;
-        background-color: $info;
-        display: block;
-        z-index: 100;
+    .image_welcome_side {
+        align-self: flex-end;
+        width: 35vw;
+        height: 70vh;
+        transform: translate(0, 20%);
+        border: 15px solid #f6f6f6;
+        border-bottom: none;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -40px;
+        right: 13%;
+        object-fit: cover;
     }
 
-    &::before {
-        content: '';
-        width: 30px;
-        height: 1.5px;
-        background-color: $info;
-        display: block;
-        z-index: 100;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -40px;
-    }
-}
-
-footer {
-    justify-content: center;
-    height: 25rem;
-    padding: 1.3rem 0;
-}
-
-.footer__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.contact__social {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.contact__list {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    list-style: none;
-
-    &--link {
-        text-decoration: none;
-    }
-
-    .fab {
-        color: black;
-        font-size: 1.4rem;
-
-        &:hover {
-            color: $main-button;
-        }
-    }
-}
-
-.copyright {
-    width: 100%;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.address {
-    text-align: center;
-    font-size: 1.2rem;
-    width: 60%;
-
-    &__header {
-        justify-content: center;
-        display: flex;
-        margin-bottom: 1rem;
-        font-size: 2rem;
-        font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
-        font-weight: 600;
-    }
-}
-
-.contact__header {
-    font-size: 2rem;
-    font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-
-}
-
-.contact {
-    font-size: 1.2rem;
-    text-align: center;
-
-    &__text {
-
-        a {
-            text-decoration: none;
-            color: $main-button;
-        }
-
-        &__header {
-            justify-content: center;
-            margin-bottom: 1rem;
-            display: flex;
-        }
-    }
-}
-
-hr {
-    display: none;
-}
-
-.main__events {
-    width: 90vw;
-    padding: 1rem 4rem;
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 50px;
-    place-items: center;
-}
-
-.events {
-    padding: 1rem 1.8rem;
-    border-radius: 10px;
-    background-color: #fff;
-    border-radius: 15px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow: 17px 17px 34px #dbdbdb, -17px -17px 34px #ffffff;
-    transition: all .4s;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-
-    &__date {
-        width: fit-content;
-        height: fit-content;
-        background-color: #ca0808;
-        color: #fff;
-        padding: .1rem .3rem;
-        border-radius: 3px;
-        font-size: 1rem;
-        word-spacing: .3rem;
-        letter-spacing: .05rem;
-    }
-
-    .event__context {
-        font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
-        margin: 10px 0;
-        padding: .5rem;
-        color: $header;
-        font-size: 1.21rem;
-        line-height: 21px;
-    }
-
-    .event__title {
-        margin: 15px 0;
-        font-size: 1.78rem;
-        line-height: 2rem;
-        color: $darkHeader;
-        font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
-        font-weight: 400;
-    }
-}
-
-
-@media screen and (max-width: 1045px) {
     .restaurant__wrapper {
-        margin-top: 6.2em;
+        margin-top: 12.4rem;
+        height: fit-content;
+        width: 100%;
+        background-color: #fff;
+        padding: 2em;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+
+    .provide-wrapper {
+        margin-top: 7rem;
         width: 100vw;
-        padding: 0;
+        background-color: #fff;
+
+        .background__shadow-top {
+            box-shadow: $shadow
+        }
     }
 
-    .main__events {
-        padding: 0;
+    .provide__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        grid-gap: 2rem;
+        width: 90%;
+
     }
 
-    .events__date {
-        font-size: 1.1rem;
+    .provide__item {
+        margin: 1rem 0 1rem 0;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+        box-shadow: 17px 17px 34px #dbdbdb,
+            -17px -17px 34px #ffffff;
+    }
+
+    .card__wrapper {
+        padding: 2em;
+
+        .card__title {
+            font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
+            border: 0;
+            outline: 0;
+            margin: 0;
+            border-radius: 3px;
+            display: inline-block;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            margin: 1em 0 1em 0;
+            padding: 0 0.8em;
+            background-color: $info;
+            color: #ffffff;
+        }
+
+        i {
+            color: $info
+        }
+    }
+
+    .card__context {
+        font-size: 1.2rem;
+        color: $darkHeader;
     }
 
     .main__header {
-        font-size: 3rem;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
+        text-align: center;
+        color: $header;
+        font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        text-shadow: 12px -5px 7px #00000059;
     }
 
-    .events__description {
-        font-size: 20px;
+    .about__events {
+        padding: 0;
+        margin-top: 3rem;
     }
-
-    .event__title {
-        font-size: 2rem;
-    }
-}
-
-
-@media screen and (max-width: 1045px) {
-
-    .about__content:first-child::before {
-        display: none;
-    }
-
-    .about__content:last-child::before {
-        display: none;
-    }
-
-    .restaurant__content {
-        margin-top: .8rem;
-        height: fit-content;
-        width: fit-content;
-    }
-
-    .about__content {
-        &--image {
-            display: none;
-        }
-    }
-
-    .about__content--text {
-        margin: 0;
-        transform: translate(0);
-    }
-
-    .about__content:nth-child(2) {
-        .about__content--text {
-            margin-left: 0;
-            border-radius: 0 10px 10px 0;
-            transform: translate(0);
-        }
-    }
-
-    .about__header {
-        margin: 0 0 20px 0;
-        font-size: 30px;
-        letter-spacing: .7px;
-        position: relative;
-
-
-    }
-
-    .about {
-        font-size: 19px;
-    }
-
 
     .all__about--content {
         display: flex;
-        width: 100vw;
-        // height: 53rem;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .restaurant__content {
-        .restaurant__title {
-            margin: 0 auto;
-            padding: 1em 0 2em 0;
-        }
-    }
+    .about__content:last-child {
+        align-items: flex-start;
 
-    .about_us {
-        bottom: -4rem;
-        max-width: 85vw;
-        margin-bottom: 10em;
-        height: fit-content;
-        align-self: flex-end;
-        background: linear-gradient(315deg, #ffffff, #e6e6e6);
-        box-shadow: $shadow 20px 20px 60px #ffffff;
-        border-radius: 50px;
-    }
-
-    .image_welcome_side {
-        display: none;
-    }
-
-
-
-    .welcome_backgroundImg {
-        height: 100vh;
-    }
-
-    .welcome__arrowDown {
-        color: white;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-self: flex-end;
-        position: absolute;
-        bottom: -10%;
-        opacity: 0;
-        animation-name: arrowBounce;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
-
-        i {
-            cursor: pointer;
+        .about__content--text {
+            margin-top: 30px;
         }
     }
 
     .about__content {
-        width: 100%;
-        width: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+        align-items: flex-end;
+        height: fit-content;
+        width: 80%;
 
-        &:nth-child(2) {
-            margin-left: 0;
+        &--text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: fit-content;
+            height: fit-content;
+            background-color: rgba(209, 209, 209, 0.5);
+            text-align: center;
+            justify-content: space-around;
+            padding: 30px;
+            margin-bottom: 25px;
+            transform: translate(150px) !important;
+            backdrop-filter: blur(3px);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        &--image {
+            z-index: 0;
+            filter: drop-shadow(0 0 0.75rem $main-nav-color);
+
         }
     }
 
+    .about__content:first-child::before {
+        content: "";
+        background: url(https://www.pngitem.com/pimgs/m/49-494441_clip-art-black-and-white-pizza-clip-art.png);
+        width: 30rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 30rem;
+        display: block;
+        transform: translate(-35rem, 0rem);
+        position: absolute;
+        opacity: .6;
+    }
+
+    .about__content:last-child::before {
+        content: "";
+        background: url(http://cdn4.dibujos.net/dibujos/pintar/racion-de-pizza_2.png);
+        width: 30rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 30rem;
+        display: block;
+        transform: translate(-35rem, 20rem);
+        position: absolute;
+        opacity: .6;
+    }
+
     .about__content:nth-child(2) {
+        flex-direction: row-reverse;
+
+        .about__content--text {
+            margin-left: 10px;
+            transform: translate(-150px) !important;
+            margin-top: 25px;
+            height: fit-content;
+        }
+    }
+
+    .about {
+        font-size: 1.3rem;
+        line-height: 23px;
+        color: $darkHeader;
+    }
+
+    .about__header {
+        margin: 0 0 20px 0;
+        position: relative;
+        font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: $darkHeader;
+
+        &::after {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            background-color: $info;
+            display: block;
+            z-index: 100;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -40px;
+        }
+
+        &::before {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            background-color: $info;
+            display: block;
+            z-index: 100;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px;
+        }
+    }
+
+    footer {
+        justify-content: center;
+        height: 25rem;
+        padding: 1.3rem 0;
+    }
+
+    .footer__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .contact__social {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact__list {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        list-style: none;
+
+        &--link {
+            text-decoration: none;
+        }
+
+        .fab {
+            color: black;
+            font-size: 1.4rem;
+
+            &:hover {
+                color: $main-button;
+            }
+        }
+    }
+
+    .copyright {
+        width: 100%;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .address {
+        text-align: center;
+        font-size: 1.2rem;
+        width: 60%;
+
+        &__header {
+            justify-content: center;
+            display: flex;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+        }
+    }
+
+    .contact__header {
+        font-size: 2rem;
+        font-family: 'Crimson Text', Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+
+    }
+
+    .contact {
+        font-size: 1.2rem;
+        text-align: center;
+
+        &__text {
+
+            a {
+                text-decoration: none;
+                color: $main-button;
+            }
+
+            &__header {
+                justify-content: center;
+                margin-bottom: 1rem;
+                display: flex;
+            }
+        }
+    }
+
+    hr {
+        display: none;
+    }
+
+    .main__events {
+        width: 90vw;
+        padding: 1rem 4rem;
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 50px;
+        place-items: center;
+    }
+
+    .events {
+        padding: 1rem 1.8rem;
+        border-radius: 10px;
+        background-color: #fff;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+        box-shadow: 17px 17px 34px #dbdbdb, -17px -17px 34px #ffffff;
+        transition: all .4s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &__date {
+            width: fit-content;
+            height: fit-content;
+            background-color: #ca0808;
+            color: #fff;
+            padding: .1rem .3rem;
+            border-radius: 3px;
+            font-size: 1rem;
+            word-spacing: .3rem;
+            letter-spacing: .05rem;
+        }
+
+        .event__context {
+            font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
+            margin: 10px 0;
+            padding: .5rem;
+            color: $header;
+            font-size: 1.21rem;
+            line-height: 21px;
+        }
+
+        .event__title {
+            margin: 15px 0;
+            font-size: 1.78rem;
+            line-height: 2rem;
+            color: $darkHeader;
+            font-family: 'Crimson Text', Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+    }
+
+
+    @media screen and (max-width: 1045px) {
+        .restaurant__wrapper {
+            margin-top: 6.2em;
+            width: 100vw;
+            padding: 0;
+        }
+
+        .main__events {
+            padding: 0;
+        }
+
+        .events__date {
+            font-size: 1.1rem;
+        }
+
+        .main__header {
+            font-size: 3rem;
+        }
+
+        .events__description {
+            font-size: 20px;
+        }
+
+        .event__title {
+            font-size: 2rem;
+        }
+    }
+
+
+    @media screen and (max-width: 1045px) {
+
+        .about__content:first-child::before {
+            display: none;
+        }
+
+        .about__content:last-child::before {
+            display: none;
+        }
+
+        .restaurant__content {
+            margin-top: .8rem;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .about__content {
+            &--image {
+                display: none;
+            }
+        }
+
+        .about__content--text {
+            margin: 0;
+            transform: translate(0);
+        }
+
+        .about__content:nth-child(2) {
+            .about__content--text {
+                margin-left: 0;
+                border-radius: 0 10px 10px 0;
+                transform: translate(0);
+            }
+        }
+
+        .about__header {
+            margin: 0 0 20px 0;
+            font-size: 30px;
+            letter-spacing: .7px;
+            position: relative;
+
+
+        }
+
+        .about {
+            font-size: 19px;
+        }
+
+
+        .all__about--content {
+            display: flex;
+            width: 100vw;
+            // height: 53rem;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .restaurant__content {
+            .restaurant__title {
+                margin: 0 auto;
+                padding: 1em 0 2em 0;
+            }
+        }
+
+        .about_us {
+            bottom: -4rem;
+            max-width: 85vw;
+            margin-bottom: 10em;
+            height: fit-content;
+            align-self: flex-end;
+            background: linear-gradient(315deg, #ffffff, #e6e6e6);
+            box-shadow: $shadow 20px 20px 60px #ffffff;
+            border-radius: 50px;
+        }
+
+        .image_welcome_side {
+            display: none;
+        }
+
+
+
+        .welcome_backgroundImg {
+            height: 100vh;
+        }
+
+        .welcome__arrowDown {
+            color: white;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-self: flex-end;
+            position: absolute;
+            bottom: -10%;
+            opacity: 0;
+            animation-name: arrowBounce;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+        .about__content {
+            width: 100%;
+            width: auto;
+
+            &:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+
+        .about__content:nth-child(2) {
+
+            .about__content--text {
+                transform: translate(0px) !important;
+            }
+        }
 
         .about__content--text {
             transform: translate(0px) !important;
         }
     }
-
-    .about__content--text {
-        transform: translate(0px) !important;
-    }
-}

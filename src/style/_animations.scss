@@ -9,3 +9,10 @@
         transform: translateY(5px);
     }
 }
+
+// spinner animation 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

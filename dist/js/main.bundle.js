@@ -94,6 +94,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 
 
+// loading spinner before 100% of webpage content is loaded
+document.onreadystatechange = function() {
+  const body = document.querySelector("body");
+  const loader = document.querySelector("#loader");
+    if (document.readyState !== "complete") {
+      body.style.visibility = "hidden";
+      loader.style.visibility = "visible";
+    } else {
+      loader.style.display = "none";
+      body.style.visibility = "visible";
+    }
+}
+
 function showNav() {
   const nav = document.querySelector(".navbar_list_items");
   const hamburger = document.querySelector(".hamburger");
