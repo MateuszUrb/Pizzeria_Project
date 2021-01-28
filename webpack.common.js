@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const ImageminPlugin = require("imagemin-webpack");
 
 module.exports = {
   entry: {
@@ -7,7 +7,12 @@ module.exports = {
     about: "./src/js/about.js",
     kitchen: "./src/js/kitchen.js",
     crew: "./src/js/crew.js",
-    // vendor: "./src/vendor.js"
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   module: {
     rules: [
@@ -29,14 +34,36 @@ module.exports = {
       },
       {
         test: /\.(|png|svg|jpg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: "assets",
-            publicPath: "assets/",
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: "assets",
+              publicPath: "assets/",
+            },
+          },
+          {
+            loader: ImageminPlugin.loader,
+            options: {
+              bail: false,
+              cache: false,
+              imageOptions: {
+                plugins: [
+                  ['pngquant', { quality: [0.5, 0.5] }],
+                  ['mozjpeg', { quality: 50, progressive: true }],
+                  ['gifsicle', { interlaced: true, optimizationLevel: 3 }],
+                  ['svgo', {
+                    plugins: [
+                      { removeViewBox: false, }
+                    ]
+                  }],
+
+                ]
+              }
+            }
           }
-        }
+        ]
       },
       {
         test: /\.(mp4|webm)$/,
@@ -82,4 +109,5 @@ module.exports = {
       filename: 'crew.html'
     }),
   ]
+
 };

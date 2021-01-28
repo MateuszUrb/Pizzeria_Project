@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 
 module.exports = merge(common, {
@@ -44,25 +43,6 @@ module.exports = merge(common, {
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].css",
-        }),
-        new ImageMinimizerPlugin({
-            minimizerOptions: {
-                plugins: [
-                    ['gifsicle', { interlaced: true }],
-                    ['jpegtran', { progressive: true }],
-                    ['optipng', { optimizationLevel: 5 }],
-                    [
-                        'svgo',
-                        {
-                            plugins: [
-                                {
-                                    removeViewBox: false,
-                                },
-                            ],
-                        },
-                    ],
-                ],
-            },
         }),
         new HtmlWebpackPlugin({
             // favicon: 'src/assets/imgs/webbrowser-icon.png',
