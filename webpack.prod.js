@@ -1,70 +1,113 @@
-const path = require("path");
-const common = require("./webpack.common");
-const merge = require("webpack-merge");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const path = require('path');
+const common = require('./webpack.common');
+const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require("webpack");
-const autoPrefixer = require("autoprefixer");
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 
 module.exports = merge(common, {
-    mode: "production",
+    mode: 'production',
+    devtool: 'source-map',
     output: {
-        filename: "./js/[name].bundle.js",
-        path: path.resolve(__dirname, "dist")
+        filename: '[name].[contenthash].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
 
-    optimization: {
-        minimizer: [
-            new HtmlWebpackPlugin({
-                template: "./src/template.html",
-                minify: {
-                    removeAttributeQuotes: true,
-                    collapseWhitespace: true,
-                    removeComments: true
-                }
-            })
-        ],
+    module: {
+        rules: [
+            {
+                test: /\.(scss|sass)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            postcssOptions: {
+                                path: 'postcss.config.js'
+                            }
+                        }
+                    },
+                    "sass-loader",
+                ]
+            },
+        ]
     },
 
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "./css/[name].css",
-        }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [
-                    autoPrefixer()
-                ]
-            }
-        })
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.(svg|png|jpe?g|gif)$/i,
-                use: {
-                  loader: "file-loader",
-                  options: {
-                    name: "[name].[ext]",
-                    esModule: false,
-                    outputPath: 'images/'
-                  }
-                },
-              },
 
-              {
-                test: /\.(scss|sass)$/,
-                use: [ // start in reverse order
-                    MiniCssExtractPlugin.loader, // 3 step move css into files
-                    "css-loader", // 2 step
-                    "postcss-loader",
-                    "sass-loader" // 1 step
-                ]
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].css",
+        }),
+        new ImageMinimizerPlugin({
+            minimizerOptions: {
+                plugins: [
+                    ['gifsicle', { interlaced: true }],
+                    ['jpegtran', { progressive: true }],
+                    ['optipng', { optimizationLevel: 5 }],
+                    [
+                        'svgo',
+                        {
+                            plugins: [
+                                {
+                                    removeViewBox: false,
+                                },
+                            ],
+                        },
+                    ],
+                ],
             },
-        ]
-    }
+        }),
+        new HtmlWebpackPlugin({
+            // favicon: 'src/assets/imgs/webbrowser-icon.png',
+            template: "./src/pages/template.html",
+            filename: "./index.html",
+            minify: {
+                removeAttributesQuotes: true,
+                collapseWhitespace: true,
+                removeComments: true,
+            },
+        }),
+        new WorkboxPlugin.GenerateSW({
+            exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+            exclude: [/\.map$/, /^manifest.*\.js(?:on)?$/,],
+            skipWaiting: true,
+            clientsClaim: true,
+            cacheId: 'ApiFinder',
+            additionalManifestEntries: [{
+                url: 'index.html',
+                revision: 'main entry file for project'
+            }],
+            runtimeCaching: [
+                {
+                    urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'google-fonts',
+                    }
+                },
+                {
+                    urlPattern: /\.(?:png|jpg|mp4|jpeg|svg)$/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'assets',
+                    }
+                },
+                {
+                    urlPattern: /^https:\/\/kit\.fontawesome\.com\/175ad7f7dc\.js/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'fontawesome-fonts-stylesheets',
+                    }
+                }
+            ],
+
+        })
+    ]
 });

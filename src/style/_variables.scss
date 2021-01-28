@@ -1,7 +1,21 @@
-$main-nav-color: #363946;
-$shadow: 0px 0px 17px 2px rgba(0,0,0,0.5);
-$main-body-color: #f6f6f6;
-$main-button: #d2401e;
-$info: #ca0808;
-$header: #5f5f5f;
-$darkHeader: #1f1f1f;
+// ** colors
+$main-font-color: #333333;
+$bg-color: #E1E7E4;
+$bg-footer: #C9A17C;
+$cta: #36622b;
+
+// ** fonts
+$nav-link: 26px; //light
+$hero-into: 55px; //regular
+$page-content: 27px; //regular
+$footer-font-size: 22px; //regular
+
+
+// ** mobile
+$mobile-nav-link: 20px; //light
+$mobile-hero-intro: 22px; //regular
+$mobile-page-content: 18px; //light
+
+
+$content-center: 5% 10%;
+$mg-items: 13rem //margin between sections
