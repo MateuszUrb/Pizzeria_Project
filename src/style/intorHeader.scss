@@ -196,7 +196,11 @@
         flex-direction: column;
         width: 100%;
         height: 80%;
-        justify-content: center;
+        justify-content: flex-start;
+
+        &-landing {
+            justify-content: center;
+        }
     }
 
     .nav__mobile-btn {
@@ -255,9 +259,9 @@
     }
 
     .intro__content {
-        font-size: $mobile-hero-intro;
+        font-size: $page-content;
         font-weight: 400;
-        width: 15rem;
+        width: 23rem;
         padding-top: 60px;
     }
 
@@ -271,5 +275,16 @@
         font-size: $mobile-hero-intro;
         width: 15rem;
         font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .intro__content {
+        font-size: $mobile-hero-intro;
+        width: 15rem;
+    }
+
+    .intro__reservation a {
+        font-size: $mobile-nav-link;
     }
 }

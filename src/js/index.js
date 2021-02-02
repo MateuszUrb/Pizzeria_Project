@@ -2,7 +2,7 @@
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-
+import './animations';
 import "../style/main.scss";
 
 

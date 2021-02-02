@@ -57,9 +57,21 @@
     }
 }
 
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 770px) {
     .footer__address {
         width: 50%;
+    }
+
+    .footer__copyright {
+        font-size: $mobile-page-content;
+    }
+
+    footer .intro__link::after {
+        display: none;
+    }
+
+    footer .intro__list {
+        line-height: 100%;
     }
 
     footer .intro__link a {
