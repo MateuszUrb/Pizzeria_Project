@@ -1,9 +1,8 @@
 ## `Pizzeria--Mia`
 
-simple Website *Landing Page* about fake pizzeriaMia
-(created while learning the webpack)
+simple Website *Landing Page with a couple of subs pages* about fake pizzeriaMia
 
-[live Demo](https://dazzling-bartik-bca68f.netlify.app/)
+[live Demo]()
 
 **Desktop view**
-![website preview](./forgit.png)
+![website preview](./landingPage.png)
