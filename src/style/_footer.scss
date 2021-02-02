@@ -5,7 +5,39 @@
     margin-top: $mg-items;
     font-size: $footer-font-size;
     font-family: 'Bodoni Moda', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2% 10% !important;
 
+    &__address {
+        color: $main-font-color;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list {
+        list-style: none;
+        text-decoration: underline;
+        flex-direction: column;
+    }
+
+    &__social {
+        flex-direction: column;
+
+        a {
+            font-size: 36px;
+            color: $main-font-color;
+            transition: color .3s ease-in;
+
+            &:hover {
+                color: $cta;
+            }
+        }
+    }
 
     &__copyright {
 
@@ -22,5 +54,15 @@
                 color: $cta;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .footer__address {
+        width: 50%;
+    }
+
+    footer .intro__link a {
+        font-size: 18px !important;
     }
 }

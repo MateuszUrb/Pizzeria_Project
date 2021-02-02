@@ -1,0 +1,2 @@
+(self.webpackChunkPizzeria_proj=self.webpackChunkPizzeria_proj||[]).push([[443],{209:function(){"use strict";console.log("about was loaded")}},0,[[209,666]]]);
+//# sourceMappingURL=about.5477c1c40797fa9b193d.bundle.js.map

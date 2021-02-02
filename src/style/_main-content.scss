@@ -45,11 +45,9 @@
 
 .intro__list-page {
     margin-top: 3rem;
-    text-decoration: underline;
 
     &--even {
         align-self: center;
-        text-decoration: underline;
         margin-top: 3rem;
 
     }
@@ -84,5 +82,50 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .page__img {
+        height: 60vh;
+    }
+
+    .video__fireplace .video-fire {
+        height: 50vh;
+        width: 100vw;
+    }
+
+    .content {
+        flex-direction: column-reverse !important;
+        height: auto;
+        margin-top: 5rem;
+
+        &:last-child {
+            margin-bottom: 5rem;
+        }
+
+        &__text,
+        .intro__link a {
+            width: 100%;
+            font-size: $mobile-page-content;
+        }
+
+
+        &__center {
+            padding-top: 1rem;
+            align-items: center;
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+
+    .intro__list-page {
+        margin-top: 1rem;
+
+        &--even {
+            margin-top: 1rem;
+        }
     }
 }

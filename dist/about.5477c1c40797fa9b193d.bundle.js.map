@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://Pizzeria_proj/./src/js/about.js"],"names":["console","log"],"mappings":"6GAGAA,QAAQC,IAAI,sB","file":"about.5477c1c40797fa9b193d.bundle.js","sourcesContent":["import \"../style/main.scss\";\n\n\nconsole.log('about was loaded')"],"sourceRoot":""}
