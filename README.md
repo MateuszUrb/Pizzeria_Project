@@ -1,10 +1,12 @@
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/9adaffa5-e125-4864-a6dc-51aa7e47865c/deploy-status)](https://app.netlify.com/sites/pizzeriamia/deploys)
+
+
 ## Pizzeria--Mia
 
 > ##  `PizzeriaMia` is a simple website with 3 subdomains, site is about a fake restaurant
 
 <br/>
 
-[live Demo](https://pizzeriamia.netlify.app/)
 
 <br/>
 
@@ -28,8 +30,8 @@
 
 <br/>
 
- [![Netlify Status](https://api.netlify.com/api/v1/badges/9adaffa5-e125-4864-a6dc-51aa7e47865c/deploy-status)](https://app.netlify.com/sites/pizzeriamia/deploys)
 
-**Desktop view**
+[live Demo](https://pizzeriamia.netlify.app/)
+**Desktop view** 
 ![website preview](./landingPage.png)
 
